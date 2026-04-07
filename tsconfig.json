@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+    "types": ["chrome"],
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "bundler",
