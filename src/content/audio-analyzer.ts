@@ -2,8 +2,8 @@
  * Audio URL analyzer
  * Receives intercepted URLs and calculates their duration
  */
-import { AnalyzeAudioUrlMessage } from "@protocol/background-to-content";
-import { AudioAnalysisResponse } from "@protocol/responses";
+import { AnalyzeAudioUrlMessage } from "@messaging/background-to-content";
+import { AudioAnalysisResponse } from "@messaging/responses";
 import { getAudioDuration } from "@utils/audio-helpers";
 import { loggers } from "@utils/logger";
 
@@ -23,7 +23,9 @@ export function initializeAudioAnalyzer(): void {
 }
 
 /**
- * Handle audio analysis request
+ * Handle audio analysis request from background script 
+ * @param message AnalyzeAudioUrlMessage containing the audio URL and metadata
+ * @param sendResponse Callback to send the analysis result back to the sender
  */
 async function handleAnalyzeRequest(
   message: AnalyzeAudioUrlMessage,

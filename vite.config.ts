@@ -1,9 +1,15 @@
 import { defineConfig } from "vite";
 import { crx } from "@crxjs/vite-plugin";
-import manifest from "./manifest.json";
+import manifest from "./manifest.config.ts";
+import zip from "vite-plugin-zip-pack";
+import { name, version } from "./package.json";
 
 export default defineConfig({
-  plugins: [crx({ manifest })],
+  plugins: [
+    crx({ manifest }),
+    zip({ outDir: "release", outFileName: `crx-${name}-${version}.zip` }),
+  ],
+
   resolve: {
     alias: {
       "@content": "/src/content",
@@ -12,6 +18,11 @@ export default defineConfig({
       "@types-local": "/src/types",
       "@messaging": "/src/messaging",
       "@protocol": "/src/protocol",
+    },
+  },
+  server: {
+    cors: {
+      origin: [/chrome-extension:\/\//],
     },
   },
 });

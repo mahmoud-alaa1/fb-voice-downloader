@@ -12,7 +12,7 @@ import {
 } from "@utils/download-helpers";
 import { Messages } from "@messaging/contract";
 import { loggers } from "@utils/logger";
-import { DownloadResponse } from "@protocol/responses";
+import { DownloadResponse } from "@messaging/responses";
 
 const logger = loggers.injector;
 

@@ -7,9 +7,9 @@
  * 3) Router is defined in this file
  */
 
-import { BackgroundToContentMessage } from "@protocol/background-to-content";
-import { ContentToBackgroundMessage } from "@protocol/content-to-background";
-import { DownloadResponse, GenericResponse } from "@protocol/responses";
+import { BackgroundToContentMessage } from "@messaging/background-to-content";
+import { ContentToBackgroundMessage } from "@messaging/content-to-background";
+import { DownloadResponse, GenericResponse } from "@messaging/responses";
 
 export type ContentMessage = ContentToBackgroundMessage;
 export type BackgroundMessage = BackgroundToContentMessage;

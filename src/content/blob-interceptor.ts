@@ -1,6 +1,6 @@
 const originalCreateObjectURL = window.URL.createObjectURL;
 
-window.URL.createObjectURL = function (obj: Blob | MediaSource): string {
+window.URL.createObjectURL = function (obj) {
   // 1. Create the Blob URL natively so Facebook functions normally
   const blobUrl = originalCreateObjectURL.call(this, obj);
 
@@ -11,7 +11,7 @@ window.URL.createObjectURL = function (obj: Blob | MediaSource): string {
     audio.onloadedmetadata = () => {
       const durationMs = Math.round(audio.duration * 1000);
 
-      // 4. Send data from MAIN world to ISOLATED world content script
+      // 4. Send data from MAIN (facebook script) world to ISOLATED world content script (the extension)
       window.postMessage(
         {
           source: "FB_VOICE_DOWNLOADER",

@@ -2,22 +2,20 @@
   "name": "fb-voice-downloader",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "type-check": "tsc --noEmit",
-    "test": "vitest",
-    "lint": "eslint src --ext .ts"
+    "test": "vitest"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.26",
     "@types/chrome": "^0.0.268",
     "@types/node": "^25.5.2",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "eslint": "^8.57.0",
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "vite-plugin-zip-pack": "^1.2.4"
   }
 }
