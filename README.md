@@ -1,16 +1,35 @@
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+
 # Voice Message Downloader for Facebook
 
-> Save Facebook and Messenger voice messages as audio files one click, no setup.
 
-## Demo (Most Important)
+Save Facebook and Messenger voice messages as audio files one click, no setup.
 
-![FB Voice Downloader demo](./docs/demo.gif)
+## Demo
 
-Add your latest walkthrough GIF at [docs/demo.gif](docs/demo.gif) to keep this section live.
+#### Send Message
+<img width="390" height="156" alt="image" src="https://github.com/user-attachments/assets/3be51aca-da3b-46f9-9012-0bb55a924cec" />
+
+#### Recieved Message
+<img width="321" height="167" alt="image" src="https://github.com/user-attachments/assets/70ec0f44-a79d-4f9f-b448-d201b0a24baa" />
+
+#### Popup
+<img width="321" height="259" alt="image" src="https://github.com/user-attachments/assets/c5f31c98-2f32-44f7-a226-2feab00dfc01" />
 
 ## Introduction
 
-FB Voice Downloader injects a download button under each detected voice message player on facebook.com and messenger.com. It matches UI players with intercepted audio sources and downloads either direct network files or in-memory Blob audio created by the page.
+You can't forward audio messages from Facebook and Messenger to any other social media.
+
+Facebook Voice Message Downloader solves this by injecting a download button directly into the UI, allowing you to save voice messages with one click.
+
+## Features
+
+- Download voice messages from Facebook & Messenger
+- Supports both CDN audio and Blob-based audio
+- One-click download directly from UI
+- Works on sent and received messages
+- No setup or authentication required
 
 ## How It Works (CDN + Blob Interception)
 
@@ -58,7 +77,12 @@ src/
 - pnpm 8+
 - Chrome or Edge (for loading unpacked extension)
 
-### Install
+## Installation
+
+### From Chrome Web Store
+(Coming soon)
+
+### Manual Installation
 
 ```bash
 pnpm install
