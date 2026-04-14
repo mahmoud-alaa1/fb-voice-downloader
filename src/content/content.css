@@ -62,6 +62,8 @@ body.__fb-light-mode {
   background: var(--fb-btn-bg);
   color: var(--fb-btn-text);
   cursor: pointer;
+  transform-origin: center;
+  animation: fbvd-btn-intro 320ms cubic-bezier(0.2, 0.9, 0.25, 1.25) 1;
 }
 
 .fbvd-btn:hover {
@@ -78,4 +80,24 @@ body.__fb-light-mode {
   height: 16px;
   color: var(--fb-btn-text);
   fill: currentColor;
+}
+
+@keyframes fbvd-btn-intro {
+  0% {
+    transform: scale(0.92);
+  }
+
+  55% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fbvd-btn {
+    animation: none;
+  }
 }
