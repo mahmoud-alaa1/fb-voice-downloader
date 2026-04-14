@@ -1,7 +1,3 @@
-/**
- * Logging utilities with prefixes for different modules
- */
-
 export type LogLevel = "log" | "warn" | "error" | "info";
 
 interface LoggerOptions {
@@ -16,6 +12,7 @@ export class Logger {
   }
 
   private log(level: LogLevel, message: string, ...args: unknown[]): void {
+    if (!import.meta.env.DEV) return;
     console[level](`${this.prefix} ${message}`, ...args);
   }
 
@@ -32,9 +29,6 @@ export class Logger {
   }
 }
 
-export const logger = new Logger({ prefix: "fbvd" });
-
-// Pre-configured loggers for different modules
 export const loggers = {
   content: new Logger({ prefix: "fbvd-content" }),
   scanner: new Logger({ prefix: "fbvd-scanner" }),
